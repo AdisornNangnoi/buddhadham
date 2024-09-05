@@ -206,7 +206,7 @@ class _ReadScreenDhamState extends State<ReadScreenDham> {
                   },
                   divisions: (numAllPage - 1).toInt(),
                   min: 1.0,
-                  max: 1300,
+                  max: 249,
                   // label: AppTextSetting.INDEX_PAGE.toInt().toString(),
                 ),
                 Padding(
