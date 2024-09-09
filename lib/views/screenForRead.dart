@@ -4,7 +4,6 @@ import 'package:buddhadham/subvieiws/dictionaryDham/mainDham.dart';
 import 'package:buddhadham/subvieiws/dictionaryVocab/mainVocab.dart';
 import 'package:buddhadham/utils/appcolors.dart';
 import 'package:buddhadham/views/screenImage.dart';
-import 'package:buddhadham/views/searchMenu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
@@ -20,7 +19,6 @@ class ReadScreen extends StatefulWidget {
   State<ReadScreen> createState() => _ReadScreenState();
 }
 
-
 class _ReadScreenState extends State<ReadScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   // final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey = GlobalKey<RefreshIndicatorState>();
@@ -29,6 +27,7 @@ class _ReadScreenState extends State<ReadScreen> {
   double numAllPage = 2;
   PageController _pageController = PageController(viewportFraction: 1);
   final TextEditingController _controllerTextField = TextEditingController();
+  String selectedText = '';
 
   @override
   void initState() {
@@ -1630,14 +1629,7 @@ class _ReadScreenState extends State<ReadScreen> {
                                       MediaQuery.of(context).size.width * 0.025,
                                 ),
                                 child: GestureDetector(
-                                  onLongPress: () {
-                                    // Show popup menu when text is selected via long press
-                                    CustomSelectionControls().showPopupMenu(
-                                      context,
-                                    );
-                                  },
                                   child: SelectionArea(
-                                    selectionControls: null,
                                     child: HtmlWidget(
                                       snapshot.data![index],
                                       textStyle: GoogleFonts.sarabun(
