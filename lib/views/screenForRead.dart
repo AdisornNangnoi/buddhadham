@@ -4,6 +4,7 @@ import 'package:buddhadham/subvieiws/dictionaryDham/mainDham.dart';
 import 'package:buddhadham/subvieiws/dictionaryVocab/mainVocab.dart';
 import 'package:buddhadham/utils/appcolors.dart';
 import 'package:buddhadham/views/screenImage.dart';
+import 'package:buddhadham/views/searchMenu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
@@ -18,6 +19,7 @@ class ReadScreen extends StatefulWidget {
   @override
   State<ReadScreen> createState() => _ReadScreenState();
 }
+
 
 class _ReadScreenState extends State<ReadScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -1627,29 +1629,38 @@ class _ReadScreenState extends State<ReadScreen> {
                                   right:
                                       MediaQuery.of(context).size.width * 0.025,
                                 ),
-                                child: SelectionArea(
-                                  child: HtmlWidget(
-                                    snapshot.data![index],
-                                    textStyle: GoogleFonts.sarabun(
-                                      fontSize: SizerUtil.deviceType ==
-                                              DeviceType.mobile
-                                          ? AppTextSetting.APP_FONTSIZE_READ
-                                          : AppTextSetting
-                                              .APP_FONTSIZE_READ_TABLET,
-                                      color: AppColors().readtextColor,
-                                      height: 1.7,
-                                    ),
-                                    onTapImage: (p0) {
-                                      //open ScreenImage for show p0
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => ScreenImage(
-                                            image: p0.alt,
+                                child: GestureDetector(
+                                  onLongPress: () {
+                                    // Show popup menu when text is selected via long press
+                                    CustomSelectionControls().showPopupMenu(
+                                      context,
+                                    );
+                                  },
+                                  child: SelectionArea(
+                                    selectionControls: null,
+                                    child: HtmlWidget(
+                                      snapshot.data![index],
+                                      textStyle: GoogleFonts.sarabun(
+                                        fontSize: SizerUtil.deviceType ==
+                                                DeviceType.mobile
+                                            ? AppTextSetting.APP_FONTSIZE_READ
+                                            : AppTextSetting
+                                                .APP_FONTSIZE_READ_TABLET,
+                                        color: AppColors().readtextColor,
+                                        height: 1.7,
+                                      ),
+                                      onTapImage: (p0) {
+                                        //open ScreenImage for show p0
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => ScreenImage(
+                                              image: p0.alt,
+                                            ),
                                           ),
-                                        ),
-                                      );
-                                    },
+                                        );
+                                      },
+                                    ),
                                   ),
                                 ),
                               ),
