@@ -19,7 +19,7 @@ class _MenuDhamState extends State<MenuDham> {
     {'title': '[2] โยนิโสมนสิการ', 'page': 18},
     {'title': '[3] อัปปมาทะ', 'page': 19},
     //หมวด 2
-    {'title': 'ทุกะ - หมวด 2', 'page': 17},
+    {'title': 'ทุกะ - หมวด 2', 'page': 20},
     {'title': '[4] กรรม 2', 'page': 20},
     {'title': '[5] กาม 2', 'page': 20},
     {'title': '[6] กามคุณ 5', 'page': 20},
@@ -83,7 +83,7 @@ class _MenuDhamState extends State<MenuDham> {
     {'title': '[64] อัตถะ 2', 'page': 41},
     {'title': '[65] อุปัญญาตธรรม 2', 'page': 41},
     //หมวด 3
-    {'title': 'เอกกะ - หมวด 3', 'page': 42},
+    {'title': 'ติกะ - หมวด 3', 'page': 42},
     {'title': '[66] กรรม 3', 'page': 42},
     {'title': '[67] กุศลมูล 3', 'page': 42},
     {'title': '[68] อกุศลมูล 3', 'page': 42},
@@ -156,7 +156,7 @@ class _MenuDhamState extends State<MenuDham> {
     {'title': '[135] อาสวะ 3', 'page': 71},
     {'title': '[136] อาสวะ 4', 'page': 71},
     //หมวด 4
-    {'title': 'เอกกะ - หมวด 4', 'page': 72},
+    {'title': 'จตุกกะ - หมวด 4', 'page': 72},
     {'title': '[137] กรรมกิเลส 4', 'page': 72},
     {'title': '[138] กุลจิรัฏฐิติธรรม 4', 'page': 72},
     {'title': '[139] ฆราวาสธรรม 4', 'page': 73},
@@ -504,13 +504,13 @@ class _MenuDhamState extends State<MenuDham> {
           color: AppColors().textColor,
         ),
       ),
-      trailing: Text(
-        'หน้า $page',
-        style: TextStyle(
-          fontSize: 16,
-          color: AppColors().textColor,
-        ),
-      ),
+      // trailing: Text(
+      //   'หน้า $page',
+      //   style: TextStyle(
+      //     fontSize: 16,
+      //     color: AppColors().textColor,
+      //   ),
+      // ),
     );
   }
 }
