@@ -268,8 +268,7 @@ class _ReadScreenForSearchVocabState extends State<ReadScreenForSearchVocab> {
       backgroundColor: AppColors().backgroundColor,
       key: _scaffoldKey,
       endDrawer: expandTextFont(),
-      appBar: AppBar(
-        
+      appBar: AppBar(        
         backgroundColor: AppColors().primaryColor,
         leading: IconButton(
           onPressed: () {
@@ -282,6 +281,7 @@ class _ReadScreenForSearchVocabState extends State<ReadScreenForSearchVocab> {
         ),
         toolbarHeight: 75,
         title: RichText(
+          textAlign: TextAlign.center,
           text: TextSpan(
             children: [
               TextSpan(

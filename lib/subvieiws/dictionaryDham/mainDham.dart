@@ -4,6 +4,7 @@ import 'package:buddhadham/subvieiws/dictionaryDham/screenForReadDham.dart';
 import 'package:buddhadham/subvieiws/dictionaryDham/searchScreenDham.dart';
 import 'package:buddhadham/utils/appcolors.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MainDham extends StatefulWidget {
@@ -62,7 +63,7 @@ class _MainDhamState extends State<MainDham> {
             label: 'ดัชชี้ค้นคำ',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.book),
+            icon: Icon(FontAwesomeIcons.book),
             label: 'อ่าน',
           ),
           // BottomNavigationBarItem(

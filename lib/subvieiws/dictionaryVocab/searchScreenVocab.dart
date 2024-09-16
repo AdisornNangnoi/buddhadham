@@ -93,6 +93,7 @@ class _SearchScreenVocabState extends State<SearchScreenVocab> {
         iconTheme: IconThemeData(color: AppColors().textColor),
         toolbarHeight: 75,
         title: RichText(
+          textAlign: TextAlign.center,
           text: TextSpan(
             children: [
               TextSpan(

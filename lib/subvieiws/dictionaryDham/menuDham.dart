@@ -19,7 +19,7 @@ class _MenuDhamState extends State<MenuDham> {
     {'title': '[2] โยนิโสมนสิการ', 'page': 18},
     {'title': '[3] อัปปมาทะ', 'page': 19},
     //หมวด 2
-    {'title': 'ทุกะ - หมวด 2', 'page': 17},
+    {'title': 'ทุกะ - หมวด 2', 'page': 20},
     {'title': '[4] กรรม 2', 'page': 20},
     {'title': '[5] กาม 2', 'page': 20},
     {'title': '[6] กามคุณ 5', 'page': 20},
@@ -83,7 +83,7 @@ class _MenuDhamState extends State<MenuDham> {
     {'title': '[64] อัตถะ 2', 'page': 41},
     {'title': '[65] อุปัญญาตธรรม 2', 'page': 41},
     //หมวด 3
-    {'title': 'เอกกะ - หมวด 3', 'page': 42},
+    {'title': 'ติกะ - หมวด 3', 'page': 42},
     {'title': '[66] กรรม 3', 'page': 42},
     {'title': '[67] กุศลมูล 3', 'page': 42},
     {'title': '[68] อกุศลมูล 3', 'page': 42},
@@ -156,7 +156,7 @@ class _MenuDhamState extends State<MenuDham> {
     {'title': '[135] อาสวะ 3', 'page': 71},
     {'title': '[136] อาสวะ 4', 'page': 71},
     //หมวด 4
-    {'title': 'เอกกะ - หมวด 4', 'page': 72},
+    {'title': 'จตุกกะ - หมวด 4', 'page': 72},
     {'title': '[137] กรรมกิเลส 4', 'page': 72},
     {'title': '[138] กุลจิรัฏฐิติธรรม 4', 'page': 72},
     {'title': '[139] ฆราวาสธรรม 4', 'page': 73},
@@ -207,7 +207,7 @@ class _MenuDhamState extends State<MenuDham> {
     {'title': '[184] สมาธิภาวนา 4', 'page': 101},
     {'title': '[185] สังขาร 4', 'page': 102},
     {'title': '[186] สังคหวัตถุ 4', 'page': 102},
-    {'title': '[187] สังคหวัตถุของผู้ครองแผ่นดิน 4 หรือ ราช-สังคหวัตถุ 4','page': 103},
+    {'title': '[187] สังคหวัตถุของผู้ครองแผ่นดิน 4 หรือ ราช-สังคหวัตถุ 4', 'page': 103},
     {'title': '[188] สังเวชนียสถาน 4', 'page': 104},
     {'title': '[189] สัมปชัญญะ 4', 'page': 105},
     {'title': '[190] สัมปทา หรือ สัมปทาคุณ 4', 'page': 106},
@@ -375,7 +375,7 @@ class _MenuDhamState extends State<MenuDham> {
     {'title': '[335] อนุสติ 10', 'page': 204},
     {'title': '[336] อสุภะ 10', 'page': 205},
     {'title': '[337] อันตคาหิกทิฏฐิ 10', 'page': 205},
-    
+
 //หมวดเกิน 10
     {'title': 'อติเรกทสกะ – หมวดเกิน 10', 'page': 206},
     {'title': '[338] กรรม 12', 'page': 206},
@@ -420,6 +420,7 @@ class _MenuDhamState extends State<MenuDham> {
         iconTheme: IconThemeData(color: AppColors().textColor),
         toolbarHeight: 75,
         title: RichText(
+          textAlign: TextAlign.center,
           text: TextSpan(
             children: [
               TextSpan(
@@ -465,15 +466,12 @@ class _MenuDhamState extends State<MenuDham> {
                 ),
                 SizedBox(height: 20),
                 ListView.builder(
-                  shrinkWrap:
-                      true, // ใช้เพื่อให้ ListView ไม่ขยายเกินพื้นที่ที่กำหนด
-                  physics:
-                      NeverScrollableScrollPhysics(), // ปิดการ scroll ใน ListView เพื่อให้ใช้ scroll ของ SingleChildScrollView
+                  shrinkWrap: true, // ใช้เพื่อให้ ListView ไม่ขยายเกินพื้นที่ที่กำหนด
+                  physics: NeverScrollableScrollPhysics(), // ปิดการ scroll ใน ListView เพื่อให้ใช้ scroll ของ SingleChildScrollView
                   itemCount: vocabList.length,
                   itemBuilder: (context, index) {
                     return InkWell(
-                      child: _buildRow(vocabList[index]['title'],
-                          vocabList[index]['page'].toString()),
+                      child: _buildRow(vocabList[index]['title'], vocabList[index]['page'].toString()),
                       onTap: () {
                         Navigator.push(
                           context,
@@ -496,21 +494,47 @@ class _MenuDhamState extends State<MenuDham> {
   }
 
   Widget _buildRow(String title, String page) {
-    return ListTile(
-      title: Text(
-        title,
-        style: TextStyle(
-          fontSize: 18,
-          color: AppColors().textColor,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // ListTile(
+        //   title: Text(
+        //     title,
+        //     style: TextStyle(
+        //       fontSize: 18,
+        //       color: AppColors().primaryColor,
+        //     ),
+        //   ),
+        //   // trailing: Text(
+        //   //   'หน้า $page',
+        //   //   style: TextStyle(
+        //   //     fontSize: 16,
+        //   //     color: AppColors().textColor,
+        //   //   ),
+        //   // ),
+        // ),
+        Wrap(         
+          children: [
+            title.contains('หมวด') == true
+            ? Text(
+              title,
+              style: TextStyle(
+                // fontSize: 18,
+                color: AppColors().primaryColor,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+            : Text(
+              title,
+              style: TextStyle(
+                // fontSize: 18,
+                color: AppColors().primaryColor,
+              ),
+            ),
+          ],
         ),
-      ),
-      trailing: Text(
-        'หน้า $page',
-        style: TextStyle(
-          fontSize: 16,
-          color: AppColors().textColor,
-        ),
-      ),
+        Divider(),
+      ],
     );
   }
 }

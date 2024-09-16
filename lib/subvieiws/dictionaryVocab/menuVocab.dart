@@ -33,6 +33,7 @@ class _MenuVocabState extends State<MenuVocab> {
           ),
         ),
         title: RichText(
+          textAlign: TextAlign.center,
           text: TextSpan(
             children: [
               TextSpan(
@@ -88,6 +89,7 @@ class _MenuVocabState extends State<MenuVocab> {
                     );
                   },
                 ),
+                
                 InkWell(
                   child: _buildRow('วิธีอ่านคำบาลี', '๒'),
                   onTap: () {
@@ -101,6 +103,7 @@ class _MenuVocabState extends State<MenuVocab> {
                     );
                   },
                 ),
+                
                 InkWell(
                   child: _buildRow('อักษรย่อชื่อคัมภีร์', '๓'),
                   onTap: () {
@@ -114,6 +117,7 @@ class _MenuVocabState extends State<MenuVocab> {
                     );
                   },
                 ),
+                
                 InkWell(
                   child: _buildRow('ก', '๔'),
                   onTap: () {
@@ -793,15 +797,21 @@ class _MenuVocabState extends State<MenuVocab> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.normal,
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Text(
+                title + '   ',
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.normal,
+                ),
+                maxLines: 1,
+              ),
             ),
           ),
           Text(
-            page,
+            '   '+page,
             style: TextStyle(
               fontSize: 13,
               fontWeight: FontWeight.normal,

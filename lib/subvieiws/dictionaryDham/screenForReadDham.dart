@@ -297,6 +297,7 @@ class _ReadScreenDhamState extends State<ReadScreenDham> {
           ),
         ),
         title: RichText(
+          textAlign: TextAlign.center,
           text: TextSpan(
             children: [
               TextSpan(

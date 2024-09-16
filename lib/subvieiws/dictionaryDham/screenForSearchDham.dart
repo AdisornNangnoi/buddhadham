@@ -281,6 +281,7 @@ class _ReadScreenForSearchDhamState extends State<ReadScreenForSearchDham> {
         ),
         toolbarHeight: 75,
         title: RichText(
+          textAlign: TextAlign.center,
           text: TextSpan(
             children: [
               TextSpan(

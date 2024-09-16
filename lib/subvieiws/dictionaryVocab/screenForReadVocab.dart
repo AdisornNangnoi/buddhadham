@@ -298,6 +298,7 @@ class _ReadScreenVocabState extends State<ReadScreenVocab> {
         iconTheme: IconThemeData(color: AppColors().textColor),
         toolbarHeight: 75,
         title: RichText(
+          textAlign: TextAlign.center,
           text: TextSpan(
             children: [
               TextSpan(
@@ -317,7 +318,7 @@ class _ReadScreenVocabState extends State<ReadScreenVocab> {
                     fontSize: 20,
                     color: AppColors().textColor,
                   ),
-                ),
+                ),                
               ),
             ],
           ),

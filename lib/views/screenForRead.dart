@@ -1415,7 +1415,7 @@ class _ReadScreenState extends State<ReadScreen> {
                     ),
 
                     ListTile(
-                      leading: Icon(Icons.book),
+                      leading: Icon(FontAwesomeIcons.book),
                       title: RichText(
                         text: TextSpan(
                           children: [
@@ -1423,14 +1423,14 @@ class _ReadScreenState extends State<ReadScreen> {
                               text: 'พจนานุกรมฯ',
                               style: GoogleFonts.sarabun(
                                 textStyle: TextStyle(
-                                  fontSize: 25,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors().primaryColor,
                                 ),
                               ),
                             ),
                             TextSpan(
-                              text: ' (ประมวลศัพท์)',
+                              text: '\n(ประมวลศัพท์)',
                               style: GoogleFonts.sarabun(
                                 textStyle: TextStyle(
                                   fontSize: 15,
@@ -1454,7 +1454,7 @@ class _ReadScreenState extends State<ReadScreen> {
                       endIndent: 15,
                     ),
                     ListTile(
-                      leading: Icon(Icons.book),
+                      leading: Icon(FontAwesomeIcons.book),
                       title: RichText(
                         text: TextSpan(
                           children: [
@@ -1462,14 +1462,14 @@ class _ReadScreenState extends State<ReadScreen> {
                               text: 'พจนานุกรมฯ',
                               style: GoogleFonts.sarabun(
                                 textStyle: TextStyle(
-                                  fontSize: 25,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors().primaryColor,
                                 ),
                               ),
                             ),
                             TextSpan(
-                              text: ' (ประมวลธรรม)',
+                              text: '\n(ประมวลธรรม)',
                               style: GoogleFonts.sarabun(
                                 textStyle: TextStyle(
                                   fontSize: 15,
@@ -1501,6 +1501,7 @@ class _ReadScreenState extends State<ReadScreen> {
         iconTheme: IconThemeData(color: AppColors().textColor),
         toolbarHeight: 75,
         title: RichText(
+          textAlign: TextAlign.center,
           text: TextSpan(
             children: [
               TextSpan(
@@ -1514,7 +1515,7 @@ class _ReadScreenState extends State<ReadScreen> {
                 ),
               ),
               TextSpan(
-                text: ' (ฉบับปรับขยาย)',
+                text: '\n(ฉบับปรับขยาย)',
                 style: GoogleFonts.sarabun(
                   textStyle: TextStyle(
                     fontSize: 20,

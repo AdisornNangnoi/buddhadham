@@ -84,6 +84,7 @@ class _SearchScreenDhamState extends State<SearchScreenDham> {
         iconTheme: IconThemeData(color: AppColors().textColor),
         toolbarHeight: 75,
         title: RichText(
+          textAlign: TextAlign.center,
           text: TextSpan(
             children: [
               TextSpan(
