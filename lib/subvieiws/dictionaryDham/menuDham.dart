@@ -533,19 +533,8 @@ class _MenuDhamState extends State<MenuDham> {
             ),
           ],
         ),
-<<<<<<< HEAD
         Divider(),
       ],
-=======
-      ),
-      // trailing: Text(
-      //   'หน้า $page',
-      //   style: TextStyle(
-      //     fontSize: 16,
-      //     color: AppColors().textColor,
-      //   ),
-      // ),
->>>>>>> 96a4e4092104b876b08194c6718deb949bce10de
     );
   }
 }
